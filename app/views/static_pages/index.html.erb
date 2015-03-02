@@ -1,0 +1,18 @@
+<% if current_user %>
+  <%= current_user.email %>
+<hr>
+
+<%= link_to "Add a course", new_course_path %>
+
+<br>
+
+<% @courses.each do |course| %>
+<p> Name: <%= course.name %></p>
+<p> Capacity: <%= course.capacity %></p>
+<br>
+<% end %>
+
+<% else %>
+<hr>
+Please sign in or sign up!
+<% end %>
